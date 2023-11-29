@@ -33,3 +33,5 @@ class SalesListCreateView(generics.ListCreateAPIView):
 class AdjustListCreateView(generics.ListCreateAPIView):
     queryset = Adjust.objects.all()
     serializer_class = AdjustSerializer
+
+# ok
