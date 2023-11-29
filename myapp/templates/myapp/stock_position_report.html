@@ -1,0 +1,115 @@
+<!-- myapp/templates/myapp/stock_position_report.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Position Report</title>
+</head>
+<body>
+    
+
+    <h2>Purchase Data</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Product ID</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for purchase in purchases %}
+                <tr>
+                    <td>{{ purchase.date }}</td>
+                    <td>{{ purchase.product_id }}</td>
+                    <td>{{ purchase.quantity }}</td>
+                    <td>{{ purchase.price }}</td>
+                    <td>{{ purchase.total }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Sales Data</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Product ID</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for sale in sales %}
+                <tr>
+                    <td>{{ sale.date }}</td>
+                    <td>{{ sale.product_id }}</td>
+                    <td>{{ sale.quantity }}</td>
+                    <td>{{ sale.price }}</td>
+                    <td>{{ sale.total }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Adjust Data</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Product ID</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for adjust in adjusts %}
+                <tr>
+                    <td>{{ adjust.date }}</td>
+                    <td>{{ adjust.product_id }}</td>
+                    <td>{{ adjust.quantity }}</td>
+                    <td>{{ adjust.price }}</td>
+                    <td>{{ adjust.total }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h1>Stock Position Report</h1>
+
+    <h2>Transaction Data</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Product</th>
+                <th>Opening Balance Quantity</th>
+                <th>Opening Balance Amount</th>
+                <th>Transactional Balance Quantity</th>
+                <th>Transactional Balance Amount</th>
+                <th>Closing Balance Quantity</th>
+                <th>Closing Balance Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for transaction in transactions %}
+                <tr>
+                    <td>{{ transaction.date }}</td>
+                    <td>{{ transaction.product }}</td>
+                    <td>{{ transaction.opening_balance_quantity }}</td>
+                    <td>{{ transaction.opening_balance_amount }}</td>
+                    <td>{{ transaction.transactional_balance_quantity }}</td>
+                    <td>{{ transaction.transactional_balance_amount }}</td>
+                    <td>{{ transaction.closing_balance_quantity }}</td>
+                    <td>{{ transaction.closing_balance_amount }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
